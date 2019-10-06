@@ -1,0 +1,15 @@
+extends layouts/main
+
+block content
+    .form_container
+        form(action=routes.editProfile, method="post")
+            div.fileUpload
+                label(for="avatar") Avatar
+                input(type="file", id="avatar", name="avatar")
+            input(type="text", placeholder="Name", name="Name")
+            input(type="email", placeholder="Email", name="Email")
+            input(type="submit", value="Update Profile")
+        a.form_container_link(href=`/users${routes.changePw}`) 
+            button Change Password
+        
+
