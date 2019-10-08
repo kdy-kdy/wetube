@@ -3,5 +3,11 @@ extends layouts/main
 block content
     .user_profile
         .header_user_profile
-            img.avatar(src=user.avatarUrl)
+            img.u_avatar(src=user.avatarUrl)
             h4.profile_username=user.name
+        if user.id === loggedUser.id
+            .user_profile_btns
+                a(href=`/users${routes.editProfile}`)
+                    button Edit Profile
+                a(href=`/users${routes.changePw}`)
+                    button Change Password
